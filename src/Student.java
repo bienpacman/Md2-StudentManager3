@@ -79,6 +79,6 @@ public class Student {
     }
 
     public String write() {
-          return id + " " + name +" " + age+ " "+ sex+ " " + address+ " " + gpa   ;
+          return id + "   " + name +"    " + age+ "    "+ sex+ "   " + address+ "   " + gpa   ;
     }
 }

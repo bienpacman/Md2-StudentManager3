@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -46,9 +47,9 @@ public class Main {
                     int choice = scanner.nextInt();
                     switch (choice) {
                         case 1:
-                        studentManager.sortStudentByGPA();
-                        break;
-                        case 2 :
+                            studentManager.sortStudentByGPA();
+                            break;
+                        case 2:
                             studentManager.sortStudentByGPA2();
                             break;
                         case 3:
@@ -57,7 +58,12 @@ public class Main {
                     }
                 }
                 case 6:
-
+                    studentManager.students = studentManager.readerAndWrite.reader();
+                    System.out.println("đọc file thành công ");
+                    break;
+                case 7:
+                    studentManager.readerAndWrite.write(studentManager.students);
+                    System.out.println("Ghi file thành công");
                     break;
                 case 8:
                     System.out.println("Good bye ^_^");

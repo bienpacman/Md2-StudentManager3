@@ -1,12 +1,10 @@
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 import java.util.Scanner;
 
 public class StudentManager {
     ArrayList<Student> students = new ArrayList<>();
-
-//    ReaderAndWrite readerAndWrite = new ReaderAndWrite();
+    ReaderAndWrite readerAndWrite = new ReaderAndWrite();
     Scanner scanner = new Scanner(System.in);
 
     public void add() {
@@ -19,7 +17,6 @@ public class StudentManager {
         double gpa = inputGpa();
         Student student = new Student(id, name, age, sex, address, gpa);
         students.add(student);
-//        readerAndWrite.write(students);
 
     }
 
@@ -86,7 +83,6 @@ public class StudentManager {
         if (!isExited) {
             System.out.printf("id = %d không tồn tại .\n", id);
         } else {
-            // studentReadAndWrite.write(studentList);
         }
     }
 
@@ -101,7 +97,6 @@ public class StudentManager {
         }
         if (student != null) {
             students.remove(student);
-            // studentReadAndWrite.write(studentList);
         } else {
             System.out.printf("id = %id ntn existed.\n", id);
         }
@@ -122,21 +117,29 @@ public class StudentManager {
             }
         }
     }
-    public void sortStudentByGPA(){
+
+    public void sortStudentByGPA() {
         Collections.sort(students, new SortStudentByGPA());
     }
-    public void sortStudentByGPA2(){
-        Collections.sort(students, new SortStudentByGPA());
+
+    public void sortStudentByGPA2() {
+        Collections.sort(students, new SortStudentByGPA2());
     }
+
     public void show() {
         System.out.println("________________________________DANH SÁCH HỌC SINH______________________________________");
         System.out.printf("%-12s%-12s%-12s%-14s%-14s%s\n", "ID", "Tên", "Tuổi", "Giới tính", "Địa chỉ", "Điểm trung bình");
         for (Student st : students) {
             System.out.println("_______________________________________________________________________________________");
             System.out.printf("%-12s%-12s%-12s%-15s%-16s%s\n", st.getId(), st.getName(), st.getAge(), st.getSex(), st.getAddress(), st.getGpa());
-//           readerAndWrite.reader(students);
         }
     }
 
+    public void writes() {
+        for (Student student : students) {
+           System.out.println(student);
+      }
+
+  }
 }
 
